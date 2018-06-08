@@ -6,6 +6,7 @@ const query = require('./query.js');
 program
   .version('0.1.0')
   .option('-t, --token [token]', 'Specify your github [token]')
+  .option('-l, --language [language]', 'Specify the coding language or repositories. (by default: javascript)', 'javascript')
   .parse(process.argv);
 
 if (program.token){
@@ -15,7 +16,7 @@ if (program.token){
     });
 
     octokit.search.repos({
-        q: query.getQuery('javascript'),
+        q: query.getQuery(program.language),
         order: 'desc',
         sort: 'stars',
         per_page: 100
@@ -28,7 +29,8 @@ if (program.token){
             repositories.map(repository => {
                 return octokit.activity.getStargazersForRepo({
                     owner: repository.owner.login,
-                    repo: repository.name
+                    repo: repository.name,
+                    per_page: 100
                 });
             })
         );
