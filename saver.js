@@ -7,7 +7,7 @@ function saveToFile(results){
 
     let data = [];
     let columns = {
-    id: 'id',
+    id: 'Id',
     name: 'Name',
     url: 'Url'
     };

@@ -1,6 +1,6 @@
 const moment = require('moment');
 
-function getStringDateTwoDayAgo(ageInDay){
+function getStringDateDayAgo(ageInDay){
     const today = new Date();
     today.setDate(today.getDate() - ageInDay);
 
@@ -8,7 +8,7 @@ function getStringDateTwoDayAgo(ageInDay){
 }
 
 function getQuery(language, ageInDay){
-    return 'language:'+ language + ' created:>' + getStringDateTwoDayAgo(ageInDay);
+    return 'language:'+ language + ' created:>' + getStringDateDayAgo(ageInDay);
 }
 
 module.exports.getQuery = getQuery;
