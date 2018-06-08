@@ -5,9 +5,9 @@ const query = require('./query.js');
 
 program
   .version('0.1.0')
-  .option('-t, --token [token]', 'Specify your github [token]')
-  .option('-l, --language [language]', 'Specify the coding language or repositories. (By default: javascript)', 'javascript')
-  .option('-d, --age [age]', 'Specify the age (in day) of the repositories to search. (By default: 2 days). For example, if you put 1, you will get all repositories created yesterday.', 2)
+  .option('-t, --token [token]', '(Needed) Specify your github token.')
+  .option('-l, --language [language]', '(Optional) Specify the coding language or repositories.', 'javascript')
+  .option('-d, --age [age]', '(Optional) Specify the age (in day) of the repositories to search. For example, if you put 1, you will get all repositories created yesterday.', 2)
   .parse(process.argv);
 
 if (program.token){
@@ -42,4 +42,7 @@ if (program.token){
     .catch((error => {
         console.log(error);
     }));
+}
+else {
+    console.log('Your github token is needed! Please, read the documentation by typing --help.');
 }
