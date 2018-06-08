@@ -1,0 +1,6 @@
+1. Get the most recent trending repository
+2. Get each repository's stargazers
+3. Flatten the list of stargazers
+4. Pick only the properties that are interested by
+5. Create a CSV with the list
+6. Print the path to the CSV
