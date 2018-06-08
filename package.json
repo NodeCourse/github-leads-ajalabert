@@ -1,0 +1,23 @@
+{
+  "name": "github-leads-ajalabert",
+  "version": "1.0.0",
+  "description": "Github leads project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NodeCourse/github-leads-ajalabert.git"
+  },
+  "author": "adrien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NodeCourse/github-leads-ajalabert/issues"
+  },
+  "homepage": "https://github.com/NodeCourse/github-leads-ajalabert#readme",
+  "dependencies": {
+    "@octokit/rest": "^15.8.1",
+    "commander": "^2.15.1"
+  }
+}
