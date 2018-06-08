@@ -1,4 +1,4 @@
-// const octokit = require('@octokit/rest');
-// const client = octokit();
+const octokit = require('@octokit/rest');
+const client = octokit();
 
-// module.exports = client;
+module.exports = client;
