@@ -19,6 +19,7 @@
   "dependencies": {
     "@octokit/rest": "^15.8.1",
     "commander": "^2.15.1",
-    "csv-stringify": "^3.0.0"
+    "csv-stringify": "^3.0.0",
+    "moment": "^2.22.2"
   }
 }
