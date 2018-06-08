@@ -37,10 +37,10 @@ if (program.token){
     })
     .then(results => {
         const flattenResults = flatten(results);
-        //console.log(flattenResults);
+        
         flattenResults.forEach(result => {
-            console.log(result.data[0].user);
-            //saver.saveToFile(user);
+            //console.log(result.data[0].user);
+            saver.saveToFile(result.data);
         });
     })
     .catch((error => {
