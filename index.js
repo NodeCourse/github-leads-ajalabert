@@ -6,7 +6,8 @@ const query = require('./query.js');
 program
   .version('0.1.0')
   .option('-t, --token [token]', 'Specify your github [token]')
-  .option('-l, --language [language]', 'Specify the coding language or repositories. (by default: javascript)', 'javascript')
+  .option('-l, --language [language]', 'Specify the coding language or repositories. (By default: javascript)', 'javascript')
+  .option('-d, --age [age]', 'Specify the age (in day) of the repositories to search. (By default: 2 days). For example, if you put 1, you will get all repositories created yesterday.', 2)
   .parse(process.argv);
 
 if (program.token){
@@ -16,7 +17,7 @@ if (program.token){
     });
 
     octokit.search.repos({
-        q: query.getQuery(program.language),
+        q: query.getQuery(program.language, program.age),
         order: 'desc',
         sort: 'stars',
         per_page: 100
