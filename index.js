@@ -3,8 +3,6 @@ const octokit = require('./client.js');
 const saver = require('./saver.js');
 const query = require('./query.js');
 
-var flatten = require('array-flatten')
-
 program
   .version('0.1.0')
   .option('-t, --token [token]', 'Specify your github [token]')
@@ -36,12 +34,7 @@ if (program.token){
         );
     })
     .then(results => {
-        const flattenResults = flatten(results);
-        
-        flattenResults.forEach(result => {
-            //console.log(result.data[0].user);
-            saver.saveToFile(result.data);
-        });
+        saver.saveToFile(results);
     })
     .catch((error => {
         console.log(error);
